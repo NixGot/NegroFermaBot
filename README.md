@@ -10,6 +10,7 @@
 `source venv/Scripts/activate`  
 После активации виртуального окружения вам надо установить библиотеки командой  
 `pip install -r requirements.txt`  
+Замените в файле bot.py 'your token' на токен вашего бота  
 Теперь вы можете запустить бота, запустив файл bot.py из IDLE или командой  
 `python bot.py`
 
