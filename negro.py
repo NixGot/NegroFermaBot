@@ -231,7 +231,7 @@ def checkLots(id):
 
 def boostNegro(id, workName, fruit):
     k = getWorksList(id).copy()
-    if fruit >= k['works'][f'{workName}']['niggers'] + marketGetCount(id)[0] and k['works'][f'{workName}']['boost'] == 0:
+    if fruit >= k['works'][f'{workName}']['niggers'] + marketGetCount(id) and k['works'][f'{workName}']['boost'] == 0:
         k['works'][f'{workName}']['money/h'] *= 2
         k['works'][f'{workName}']['maxMoney'] *= 2
         k['works'][f'{workName}']['boost'] = 1
