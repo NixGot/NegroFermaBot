@@ -312,7 +312,7 @@ def getTop():
         SELECT userName, totalMoney
         FROM users
         WHERE userid != '928393988'
-        ORDER BY baks desc limit 10;
+        ORDER BY totalMoney desc limit 10;
     """)
     res = cur.fetchmany(10)
     return res
