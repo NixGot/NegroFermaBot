@@ -188,8 +188,9 @@ def create_profile(message):
             p = []
             lis = negro.getWorksList(message.chat.id)['works']
             for i in negro.getWorksList(message.chat.id)['works'].keys():
-                p.append(f"""{i}: {lis[i]['niggers']} негров принесут ещё {lis[i]['maxMoney']} $. Осталось {int(round(lis[i]['maxMoney'] // lis[i]['money/h'] - (time.time() - lis[i]['time']) / 3600))} ч. 
-{round((lis[i]['maxMoney'] // lis[i]['money/h'] - (time.time() - lis[i]['time']) / 3600 - round(lis[i]['maxMoney'] // lis[i]['money/h'] - (time.time() - lis[i]['time']) / 3600)) * 60)} мин.""")
+                tim = lis[i]['maxMoney'] / lis[i]['money/h'] * 3600 - (time.time() - lis[i]['time'])
+                p.append(f"""{i}: {lis[i]['niggers']} негров принесут ещё {lis[i]['maxMoney']} $. Осталось {int(tim // 3600)} ч. 
+{round((tim / 3600 - tim // 3600) * 60)} мин.""")
             room[f'{message.chat.id}'] = 'Рабочая статистика'
             last_response[f'{message.chat.id}'] = ''
             me = '\n'.join(p)
