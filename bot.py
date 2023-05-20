@@ -189,8 +189,7 @@ def create_profile(message):
             lis = negro.getWorksList(message.chat.id)['works']
             for i in negro.getWorksList(message.chat.id)['works'].keys():
                 tim = lis[i]['maxMoney'] / lis[i]['money/h'] * 3600 - (time.time() - lis[i]['time'])
-                p.append(f"""{i}: {lis[i]['niggers']} негров принесут ещё {lis[i]['maxMoney']} $. Осталось {int(tim // 3600)} ч. 
-{round((tim / 3600 - tim // 3600) * 60)} мин.""")
+                p.append(f"""{i}: {lis[i]['niggers']} негров принесут ещё {lis[i]['maxMoney']} $. Осталось {int(tim // 3600)} ч. {round((tim / 3600 - tim // 3600) * 60)} мин.""")
             room[f'{message.chat.id}'] = 'Рабочая статистика'
             last_response[f'{message.chat.id}'] = ''
             me = '\n'.join(p)
@@ -207,10 +206,12 @@ def create_profile(message):
 🥇{top[1][0]}: {negro.formatedNum(top[1][1])} $
 🥈{top[2][0]}: {negro.formatedNum(top[2][1])} $
 🥉{top[3][0]}: {negro.formatedNum(top[3][1])} $
-👳{top[4][0]}: {negro.formatedNum(top[4][1])} $
-🐷{top[5][0]}: {negro.formatedNum(top[5][1])} $
-👨🏿{top[6][0]}: {negro.formatedNum(top[6][1])} $
-🗑️{top[7][0]}: {negro.formatedNum(top[7][1])} $
+😇{top[4][0]}: {negro.formatedNum(top[4][1])} $
+👳{top[5][0]}: {negro.formatedNum(top[5][1])} $
+🐷{top[6][0]}: {negro.formatedNum(top[6][1])} $
+👨🏿{top[7][0]}: {negro.formatedNum(top[7][1])} $
+👨🏿‍🦽{top[8][0]}: {negro.formatedNum(top[8][1])} $
+🗑️{top[9][0]}: {negro.formatedNum(top[9][1])} $
 ---------------------------------
 Топ обновляется каждые 10 мин
 """, reply_markup=Keyboard('Топ'))
@@ -438,7 +439,7 @@ def create_profile(message):
         else:
             if negro.getDB(message.chat.id, 'userid') is None and last_response[f'{message.chat.id}'] == '/start':
                 negro.create_profile(message.chat.id, message.text)
-                bot.send_message(message.chat.id, f'{negro.getDB(message.chat.id, u)}, Вы успешно зарегестрированны')
+                bot.send_message(message.chat.id, f'{negro.getDB(message.chat.id, u)}, Вы успешно зарегестрированны', reply_markup=Keyboard('В усадьбу'))
             elif negro.getDB(message.chat.id, 'userid') is not None:
                 bot.send_message(message.chat.id, f'{negro.getDB(message.chat.id, u)}, Вы уже зарегестрированны')
     except BaseException:
